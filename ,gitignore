@@ -51,7 +51,7 @@ baseline.json
 # Ignore .history for the xyz.local-history VSCode extension
 .history
 
-# Husky
+
 .husky/_
 
 .angular/
