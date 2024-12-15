@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="content" *ngIf="currentPage === 0">
+    <h1>การเขียนตัวเลขไทย</h1>
+    <div class="intro">
+      <h2>เรียนรู้การเขียนตัวเลข ๑-๑๐</h2>
+      <div class="benefits">
+        <h3>ประโยชน์ของการเรียนตัวเลขไทย:</h3>
+        <ul>
+          <li>เป็นการอนุรักษ์วัฒนธรรมไทย</li>
+          <li>ใช้ในเอกสารราชการและวรรณกรรมไทย</li>
+          <li>พัฒนาทักษะการอ่านและเขียนภาษาไทย</li>
+        </ul>
+      </div>
+      <div class="author">
+        <h2>จัดทำโดย</h2>
+        <p>นายพสิษฐ์ บุญพนาศรี</p>
+        <p>รหัสนักศึกษา: 6430122113307</p>
+        <p>นายจิรพัฒน์ พรมมีเดช</p>
+        <p>รหัสนักศึกษา: 6430122113309</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" *ngIf="currentPage > 0">
+    <div class="number-display">
+      <h2>ตัวเลข {{numbers[currentPage-1].thai}}</h2>
+      <div class="number-info">
+        <div class="thai-number">{{numbers[currentPage-1].thai}}</div>
+        <div class="details">
+          <p>เลขอารบิก: {{numbers[currentPage-1].arabic}}</p>
+          <p>อ่านว่า: {{numbers[currentPage-1].pronunciation}}</p>
+        </div>
+      </div>
+      <div class="writing-guide">
+        <h3>วิธีการเขียน</h3>
+        <p>{{numbers[currentPage-1].description}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <button (click)="previousPage()" [disabled]="currentPage === 0">ย้อนกลับ</button>
+    <button (click)="nextPage()" [disabled]="currentPage === 10">ถัดไป</button>
+  </div>
+</div>
